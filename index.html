@@ -71,7 +71,7 @@
   .sb-sia { background: var(--sia-light); color: var(--sia-dark); }
   .sb-sho { background: var(--sho-light); color: var(--sho-dark); }
   .tabbar { display: flex; border-bottom: 0.5px solid var(--border); flex-shrink: 0; background: var(--bg); }
-  .tab { flex: 1; padding: 10px 0; text-align: center; font-size: 12px; color: var(--text3); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; }
+  .tab { flex: 1; padding: 10px 0; text-align: center; font-size: 11px; color: var(--text3); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; }
   .tab.on-sia { color: var(--sia); border-bottom-color: var(--sia); font-weight: 600; }
   .tab.on-sho { color: var(--sho); border-bottom-color: var(--sho); font-weight: 600; }
   .scr { display: none; flex-direction: column; flex: 1; overflow: hidden; min-height: 0; }
@@ -152,6 +152,55 @@
   .opt.wrong { background: #FCEBEB; border-color: #A32D2D; color: #791F1F; }
   .quiz-result { text-align: center; font-size: 14px; font-weight: 600; min-height: 22px; }
   .quiz-score { display: flex; justify-content: center; gap: 20px; font-size: 13px; color: var(--text2); }
+
+  /* ══════════════════════════════════════
+     타이핑 탭
+  ══════════════════════════════════════ */
+  .typing-zone { flex: 1; padding: 14px 18px; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+  .typing-dir-row { display: flex; gap: 8px; }
+  .typing-dir-btn { flex: 1; padding: 9px 6px; border-radius: 10px; border: 1.5px solid var(--border2); background: var(--bg); font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; color: var(--text); }
+  .typing-dir-btn.active-sia { background: var(--sia); color: white; border-color: var(--sia); }
+  .typing-dir-btn.active-sho { background: var(--sho); color: white; border-color: var(--sho); }
+  .typing-card { background: var(--bg2); border-radius: var(--radius-lg); padding: 22px 18px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .typing-prompt-lbl { font-size: 12px; color: var(--text3); }
+  .typing-question { font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+  .typing-pron { font-size: 13px; color: var(--text2); }
+  .typing-input-wrap { display: flex; gap: 8px; }
+  .typing-input { flex: 1; padding: 13px 14px; border-radius: var(--radius); border: 1.5px solid var(--border2); background: var(--bg); font-size: 16px; color: var(--text); font-family: inherit; outline: none; transition: border-color 0.15s; }
+  .typing-input:focus { border-color: var(--accent); }
+  .typing-input.correct-inp { border-color: #3B6D11; background: #EAF3DE; }
+  .typing-input.wrong-inp { border-color: #A32D2D; background: #FCEBEB; }
+  .typing-submit { padding: 13px 18px; border-radius: var(--radius); border: none; font-size: 14px; font-weight: 700; cursor: pointer; color: white; transition: opacity 0.15s; }
+  .typing-submit:active { opacity: 0.8; }
+  .typing-feedback { text-align: center; font-size: 14px; font-weight: 600; min-height: 20px; }
+  .typing-answer-reveal { font-size: 13px; color: var(--text2); text-align: center; min-height: 18px; }
+  .typing-score { display: flex; justify-content: center; gap: 20px; font-size: 13px; color: var(--text2); }
+  .typing-skip { text-align: center; font-size: 12px; color: var(--text3); cursor: pointer; padding: 4px; text-decoration: underline; }
+
+  /* ══════════════════════════════════════
+     깜빡이 탭
+  ══════════════════════════════════════ */
+  .flash-zone { flex: 1; padding: 14px 18px; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+  .flash-controls { display: flex; gap: 8px; align-items: center; }
+  .flash-speed-lbl { font-size: 12px; color: var(--text2); white-space: nowrap; }
+  .flash-speed-input { flex: 1; accent-color: var(--accent); }
+  .flash-speed-val { font-size: 12px; font-weight: 600; color: var(--text); min-width: 32px; text-align: right; }
+  .flash-card-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; min-height: 220px; }
+  .flash-card { width: 100%; border-radius: 24px; padding: 32px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 180px; transition: opacity 0.25s; }
+  .flash-card.flash-en { background: var(--bg2); }
+  .flash-card.flash-kr { background: var(--bg2); }
+  .flash-type-badge { font-size: 11px; font-weight: 600; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 20px; margin-bottom: 4px; }
+  .flash-main-text { font-size: 36px; font-weight: 800; color: var(--text); letter-spacing: -1px; line-height: 1.15; }
+  .flash-sub-text { font-size: 15px; color: var(--text2); }
+  .flash-counter { font-size: 12px; color: var(--text3); text-align: center; }
+  .flash-btn-row { display: flex; gap: 8px; }
+  .flash-btn { flex: 1; padding: 14px; border-radius: var(--radius-lg); border: none; font-size: 15px; font-weight: 700; cursor: pointer; transition: opacity 0.15s; }
+  .flash-btn:active { opacity: 0.8; }
+  .flash-btn-start-sia { background: var(--sia); color: white; }
+  .flash-btn-start-sho { background: var(--sho); color: white; }
+  .flash-btn-stop { background: var(--bg2); color: var(--text); border: 1px solid var(--border2); }
+  .flash-progress { height: 4px; background: var(--bg2); border-radius: 2px; overflow: hidden; }
+  .flash-progress-fill { height: 100%; border-radius: 2px; transition: width 0.3s; }
 
   /* ══════════════════════════════════════
      기록 탭
@@ -276,6 +325,8 @@
       <div class="tab" onclick="goTab('level')">레벨</div>
       <div class="tab" onclick="goTab('learn')">학습</div>
       <div class="tab" onclick="goTab('quiz')">퀴즈</div>
+      <div class="tab" onclick="goTab('typing')">타이핑</div>
+      <div class="tab" onclick="goTab('flash')">깜빡이</div>
       <div class="tab" onclick="goTab('stats')">기록</div>
       <div class="tab" onclick="goTab('edit')">편집</div>
     </div>
@@ -347,6 +398,55 @@
         <div class="quiz-result" id="q-result"></div>
         <div class="quiz-score">
           정답 <b id="q-ok" style="color:#27500A;">0</b>&nbsp;&nbsp;오답 <b id="q-fail" style="color:#791F1F;">0</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- 타이핑 탭 -->
+    <div class="scr" id="scr-typing">
+      <div class="typing-zone">
+        <div class="typing-dir-row">
+          <button class="typing-dir-btn" id="tdir-ek" onclick="setTypingDir('ek')">🇺🇸 영어 → 한글</button>
+          <button class="typing-dir-btn" id="tdir-ke" onclick="setTypingDir('ke')">🇰🇷 한글 → 영어</button>
+        </div>
+        <div class="typing-card">
+          <div class="typing-prompt-lbl" id="t-prompt-lbl">영어를 보고 한글 뜻을 입력하세요</div>
+          <div class="typing-question" id="t-question">-</div>
+          <div class="typing-pron" id="t-pron"></div>
+        </div>
+        <div class="typing-input-wrap">
+          <input class="typing-input" id="t-input" type="text" placeholder="정답 입력..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onkeydown="if(event.key==='Enter')submitTyping()">
+          <button class="typing-submit" id="t-submit-btn" onclick="submitTyping()">확인</button>
+        </div>
+        <div class="typing-feedback" id="t-feedback"></div>
+        <div class="typing-answer-reveal" id="t-reveal"></div>
+        <div class="typing-score">
+          정답 <b id="t-ok" style="color:#27500A;">0</b>&nbsp;&nbsp;오답 <b id="t-fail" style="color:#791F1F;">0</b>
+        </div>
+        <div class="typing-skip" onclick="skipTyping()">건너뛰기 →</div>
+      </div>
+    </div>
+
+    <!-- 깜빡이 탭 -->
+    <div class="scr" id="scr-flash">
+      <div class="flash-zone">
+        <div class="flash-controls">
+          <span class="flash-speed-lbl">⏱ 속도</span>
+          <input type="range" class="flash-speed-input" id="flash-speed" min="0.5" max="5" step="0.5" value="2" oninput="updateFlashSpeed()">
+          <span class="flash-speed-val" id="flash-speed-val">2초</span>
+        </div>
+        <div class="flash-progress"><div class="flash-progress-fill" id="flash-pf" style="width:0%"></div></div>
+        <div class="flash-card-wrap">
+          <div class="flash-card" id="flash-card">
+            <div class="flash-type-badge" id="flash-badge">EN</div>
+            <div class="flash-main-text" id="flash-main">학습 시작을<br>눌러주세요 🐶</div>
+            <div class="flash-sub-text" id="flash-sub"></div>
+          </div>
+          <div class="flash-counter" id="flash-counter"></div>
+        </div>
+        <div class="flash-btn-row">
+          <button class="flash-btn" id="flash-start-btn" onclick="toggleFlash()">▶ 시작</button>
+          <button class="flash-btn flash-btn-stop" onclick="resetFlash()">↺ 처음부터</button>
         </div>
       </div>
     </div>
@@ -2827,7 +2927,7 @@ function buildEditList() {
    탭 전환
 ══════════════════════════════════════ */
 function goTab(tab) {
-  const tabs = ['level','learn','quiz','stats','edit'];
+  const tabs = ['level','learn','quiz','typing','flash','stats','edit'];
   document.querySelectorAll('.tab').forEach((t, i) => {
     t.className = 'tab' + (tabs[i] === tab ? (' ' + (isSia() ? 'on-sia' : 'on-sho')) : '');
   });
@@ -2837,6 +2937,250 @@ function goTab(tab) {
   if (tab === 'stats') updateStats();
   if (tab === 'edit') buildEditList();
   if (tab === 'learn' && !curWords.length) startLearn();
+  if (tab === 'typing') initTyping();
+  if (tab === 'flash') initFlash();
+}
+
+/* ══════════════════════════════════════
+   타이핑 퀴즈
+══════════════════════════════════════ */
+let typingDir = 'ek'; // 'ek': 영어→한글, 'ke': 한글→영어
+let typingWords = [], typingIdx = 0, typingOk = 0, typingFail = 0;
+let typingAnswered = false;
+
+function setTypingDir(dir) {
+  typingDir = dir;
+  const ac = isSia() ? 'active-sia' : 'active-sho';
+  document.getElementById('tdir-ek').className = 'typing-dir-btn' + (dir==='ek' ? ' '+ac : '');
+  document.getElementById('tdir-ke').className = 'typing-dir-btn' + (dir==='ke' ? ' '+ac : '');
+  initTyping();
+}
+
+function initTyping() {
+  // 현재 선택된 단어 세트 사용
+  typingWords = curWords.length ? [...curWords] : getAllWords();
+  typingWords = typingWords.sort(() => Math.random()-0.5);
+  typingIdx = 0; typingOk = 0; typingFail = 0;
+  document.getElementById('t-ok').textContent = '0';
+  document.getElementById('t-fail').textContent = '0';
+
+  // 방향 버튼 색상
+  const ac = isSia() ? 'active-sia' : 'active-sho';
+  document.getElementById('tdir-ek').className = 'typing-dir-btn' + (typingDir==='ek' ? ' '+ac : '');
+  document.getElementById('tdir-ke').className = 'typing-dir-btn' + (typingDir==='ke' ? ' '+ac : '');
+
+  // submit 버튼 색
+  document.getElementById('t-submit-btn').style.background = isSia() ? 'var(--sia)' : 'var(--sho)';
+
+  showTypingWord();
+}
+
+function showTypingWord() {
+  if (!typingWords.length) return;
+  typingAnswered = false;
+  const w = typingWords[typingIdx % typingWords.length];
+  const inp = document.getElementById('t-input');
+  inp.value = '';
+  inp.className = 'typing-input';
+  inp.disabled = false;
+  document.getElementById('t-feedback').textContent = '';
+  document.getElementById('t-reveal').textContent = '';
+
+  if (typingDir === 'ek') {
+    document.getElementById('t-prompt-lbl').textContent = '영어를 보고 한글 뜻을 입력하세요';
+    document.getElementById('t-question').textContent = w.e;
+    document.getElementById('t-pron').textContent = w.p || '';
+  } else {
+    document.getElementById('t-prompt-lbl').textContent = '한글 뜻을 보고 영어 단어를 입력하세요';
+    document.getElementById('t-question').textContent = w.k;
+    document.getElementById('t-pron').textContent = '';
+  }
+  setTimeout(() => inp.focus(), 100);
+}
+
+function normalizeAnswer(s) {
+  return s.trim().toLowerCase()
+    .replace(/[,，、·]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function submitTyping() {
+  if (typingAnswered) { nextTyping(); return; }
+  if (!typingWords.length) return;
+
+  const w = typingWords[typingIdx % typingWords.length];
+  const inp = document.getElementById('t-input');
+  const userVal = inp.value;
+
+  if (!userVal.trim()) { inp.focus(); return; }
+
+  typingAnswered = true;
+  inp.disabled = true;
+
+  let correct = false;
+  if (typingDir === 'ek') {
+    // 영→한: 한글 답 체크 (정답의 어느 한 표현이라도 포함되면 정답)
+    const correctAnswers = w.k.split(/[,，\/]/).map(s => normalizeAnswer(s));
+    const userNorm = normalizeAnswer(userVal);
+    correct = correctAnswers.some(a => a && userNorm.includes(a)) || correctAnswers.some(a => a && a.includes(userNorm) && userNorm.length >= 2);
+  } else {
+    // 한→영: 영어 답 체크
+    correct = normalizeAnswer(userVal) === normalizeAnswer(w.e);
+  }
+
+  if (correct) {
+    typingOk++;
+    inp.className = 'typing-input correct-inp';
+    document.getElementById('t-feedback').innerHTML = '<span style="color:#27500A;">🎉 정답!</span>';
+    document.getElementById('t-reveal').textContent = typingDir==='ek' ? w.k : w.e;
+  } else {
+    typingFail++;
+    inp.className = 'typing-input wrong-inp';
+    document.getElementById('t-feedback').innerHTML = '<span style="color:#791F1F;">😅 틀렸어요</span>';
+    document.getElementById('t-reveal').textContent = '정답: ' + (typingDir==='ek' ? w.k : w.e);
+  }
+
+  document.getElementById('t-ok').textContent = typingOk;
+  document.getElementById('t-fail').textContent = typingFail;
+  document.getElementById('t-submit-btn').textContent = '다음 →';
+
+  setTimeout(() => nextTyping(), 1800);
+}
+
+function nextTyping() {
+  typingIdx = (typingIdx + 1) % typingWords.length;
+  document.getElementById('t-submit-btn').textContent = '확인';
+  showTypingWord();
+}
+
+function skipTyping() {
+  if (typingAnswered) return;
+  const w = typingWords[typingIdx % typingWords.length];
+  document.getElementById('t-reveal').textContent = '정답: ' + (typingDir==='ek' ? w.k : w.e);
+  typingAnswered = true;
+  document.getElementById('t-input').disabled = true;
+  setTimeout(() => nextTyping(), 1500);
+}
+
+/* ══════════════════════════════════════
+   깜빡이 학습
+══════════════════════════════════════ */
+let flashWords = [], flashIdx = 0, flashShowEn = true;
+let flashTimer = null, flashRunning = false, flashSpeed = 2000;
+let flashStep = 0; // 각 단어당 EN→KR 두 스텝
+
+function initFlash() {
+  stopFlash();
+  flashWords = curWords.length ? [...curWords] : getAllWords();
+  flashIdx = 0; flashShowEn = true; flashStep = 0;
+  updateFlashCard(false);
+  updateFlashStartBtn();
+  document.getElementById('flash-counter').textContent = flashWords.length ? '총 ' + flashWords.length + '개 단어' : '';
+  document.getElementById('flash-pf').style.width = '0%';
+}
+
+function updateFlashSpeed() {
+  flashSpeed = parseFloat(document.getElementById('flash-speed').value) * 1000;
+  document.getElementById('flash-speed-val').textContent = document.getElementById('flash-speed').value + '초';
+  if (flashRunning) { clearInterval(flashTimer); flashTimer = setInterval(flashStep_, flashSpeed); }
+}
+
+function updateFlashCard(animate) {
+  if (!flashWords.length) return;
+  const card = document.getElementById('flash-card');
+  const totalSteps = flashWords.length * 2;
+  const curStepNum = flashIdx * 2 + (flashShowEn ? 0 : 1);
+
+  if (animate) card.style.opacity = '0';
+
+  setTimeout(() => {
+    const w = flashWords[flashIdx];
+    const badge = document.getElementById('flash-badge');
+    const main = document.getElementById('flash-main');
+    const sub = document.getElementById('flash-sub');
+    const ac = isSia() ? 'var(--sia)' : 'var(--sho)';
+    const acLight = isSia() ? 'var(--sia-light)' : 'var(--sho-light)';
+
+    if (flashShowEn) {
+      badge.textContent = 'EN';
+      badge.style.background = acLight;
+      badge.style.color = ac;
+      main.textContent = w.e;
+      sub.textContent = w.p || '';
+    } else {
+      badge.textContent = 'KR';
+      badge.style.background = 'var(--bg3)';
+      badge.style.color = 'var(--text2)';
+      main.textContent = w.k;
+      sub.textContent = w.e;
+    }
+
+    document.getElementById('flash-counter').textContent =
+      (flashIdx + 1) + '/' + flashWords.length + '  (' + (flashShowEn ? '영어' : '한글') + ')';
+
+    const pct = Math.round(curStepNum / totalSteps * 100);
+    document.getElementById('flash-pf').style.background = ac;
+    document.getElementById('flash-pf').style.width = pct + '%';
+
+    if (animate) card.style.opacity = '1';
+  }, animate ? 200 : 0);
+}
+
+function flashStep_() {
+  if (flashShowEn) {
+    // EN 보여줬으니 KR로
+    flashShowEn = false;
+  } else {
+    // KR 보여줬으니 다음 단어 EN으로
+    flashShowEn = true;
+    flashIdx++;
+    if (flashIdx >= flashWords.length) {
+      // 한 바퀴 완료 → 처음부터
+      flashIdx = 0;
+      showToast('🔄 한 바퀴 완료! 다시 시작해요');
+    }
+  }
+  updateFlashCard(true);
+}
+
+function toggleFlash() {
+  if (flashRunning) { stopFlash(); }
+  else { startFlash(); }
+}
+
+function startFlash() {
+  if (!flashWords.length) { showToast('학습할 단어가 없어요'); return; }
+  flashRunning = true;
+  updateFlashStartBtn();
+  updateFlashCard(false);
+  flashTimer = setInterval(flashStep_, flashSpeed);
+}
+
+function stopFlash() {
+  flashRunning = false;
+  if (flashTimer) { clearInterval(flashTimer); flashTimer = null; }
+  updateFlashStartBtn();
+}
+
+function resetFlash() {
+  stopFlash();
+  flashIdx = 0; flashShowEn = true;
+  updateFlashCard(false);
+  document.getElementById('flash-pf').style.width = '0%';
+  document.getElementById('flash-counter').textContent = flashWords.length ? '총 ' + flashWords.length + '개 단어' : '';
+}
+
+function updateFlashStartBtn() {
+  const btn = document.getElementById('flash-start-btn');
+  if (flashRunning) {
+    btn.textContent = '⏸ 일시정지';
+    btn.className = 'flash-btn flash-btn-stop';
+  } else {
+    const ac = isSia() ? 'flash-btn-start-sia' : 'flash-btn-start-sho';
+    btn.textContent = '▶ 시작';
+    btn.className = 'flash-btn ' + ac;
+  }
 }
 
 /* ══════════════════════════════════════
